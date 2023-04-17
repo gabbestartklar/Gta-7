@@ -2,7 +2,9 @@
 window.onload = function() {
     var canvas = document.getElementById("MAP");
     var ctx = canvas.getContext("2d");
-    var img = document.getElementById(HUS);
-    ctx.drawImage(img, 10, 10);
+    console.log(ctx)
+    var img = document.getElementById("HUS");
+    console.log(img)
+    ctx.drawImage(img, 10, 10, 40, 40);
 
   };
