@@ -5,6 +5,6 @@ window.onload = function() {
     console.log(ctx)
     var img = document.getElementById("HUS");
     console.log(img)
-    ctx.drawImage(img, 10, 10, 40, 40);
+    ctx.drawImage(img, 10, 10, 100, 100);
 
   };
