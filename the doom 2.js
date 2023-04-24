@@ -8,7 +8,7 @@ var context = canvas.getContext("2d");
 var players = [  { name: "Spelare 1", position: 0, color: "red" },  { name: "Spelare 2", position: 0, color: "blue" }];
 
 // Skapa en array för alla rutor på spelplanen
-var squares = [  { name: "Start", color: "white", x: 700, y: 550 },  { name: "Röd", color: "red", x: 630, y: 550 },  { name: "Grön", color: "green", x: 560, y: 550 },  { name: "Blå", color: "blue", x: 490, y: 550 },  // Fyll i resten av spelplanen med rutor];
+var squares = [  { name: "Start", color: "white", x: 700, y: 550 },  { name: "Röd", color: "red", x: 630, y: 550 },  { name: "Grön", color: "green", x: 560, y: 550 },  { name: "Blå", color: "blue", x: 490, y: 550 }]  // Fyll i resten av spelplanen med rutor];
 
 // Rita spelplanen på canvas
 function drawBoard() {
