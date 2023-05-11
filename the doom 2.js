@@ -15,8 +15,9 @@ let dy = 0;
 // Sätt upp maten
 let food = {x: Math.floor(Math.random() * width), y: Math.floor(Math.random() * height)};
 
-let score = 0
 
+
+// Rita ut spelet på Canvas
 // Rita ut spelet på Canvas
 function draw() {
     // Rensa Canvas
@@ -26,13 +27,16 @@ function draw() {
     snake.forEach(segment => {
         ctx.fillStyle = "green";
         ctx.fillRect(segment.x * tileSize, segment.y * tileSize, tileSize, tileSize);
-        ctx.font = "30px Arial";
-        ctx.fillText("1",10,50);
     });
 
     // Rita ut maten
     ctx.fillStyle = "red";
     ctx.fillRect(food.x * tileSize, food.y * tileSize, tileSize, tileSize);
+
+    // Rita ut poängen
+    ctx.font = "30px Arial";
+    ctx.fillStyle = "green";
+    ctx.fillText("" + (snake.length - 3), 10, 50);
 
     // Uppdatera ormens position
     let head = {x: snake[0].x + dx, y: snake[0].y + dy};
@@ -42,18 +46,17 @@ function draw() {
     if (head.x !== food.x || head.y !== food.y) {
         snake.pop();
     } else {
-        // Placera ut ny mat
+        // Placera ut ny mat och öka poängen
         food = {x: Math.floor(Math.random() * width), y: Math.floor(Math.random() * height)};
     }
 
     // Kontrollera om ormen kolliderar med väggarna eller sin egen kropp
     if (head.x < 0 || head.x >= width || head.y < 0 || head.y >= height || snake.slice(1).some(segment => segment.x === head.x && segment.y === head.y)) {
         clearInterval(intervalId);
-        alert("Game over! Try again by clicking on the restartbutton");
+        alert("Game over! Try again by clicking on the restart button");
     }
-
-
 }
+
 
 // Lyssna på piltangenterna för att styra ormen
 document.addEventListener("keydown", event => {
